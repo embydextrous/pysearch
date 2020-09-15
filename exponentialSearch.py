@@ -1,4 +1,5 @@
 # Useful for binary search if array size is too large
+import time
 
 def exponentialSearch(a, x):
     n = len(a)
@@ -20,5 +21,7 @@ def binarySearch(a, l, r, x):
     return binarySearch(a, mid + 1, r, x)
 
 a = [i for i in range(10000000)]
+start = time.time()
 print exponentialSearch(a, 93988)
+print (time.time() - start) * 1000
     
