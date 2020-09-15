@@ -1,5 +1,7 @@
 import math
 
+# Time complexity of jump search is sqrt(n) and so is the optimal jump size.
+
 def jumpSearch(a, key):
     n = len(a)
     step = int(math.sqrt(n))
