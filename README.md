@@ -1,3 +1,3 @@
 # pysearch
 
-Searching Algorithms in Python
+Searching Algorithms in Python 
