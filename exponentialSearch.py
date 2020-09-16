@@ -13,7 +13,7 @@ def exponentialSearch(a, x):
 def binarySearch(a, l, r, x):
     if l > r:
         return -1
-    mid = (l+r) / 2
+    mid = l + (r-l) / 2
     if a[mid] == x:
         return mid
     if a[mid] > x:

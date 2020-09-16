@@ -1,7 +1,7 @@
 def binarySearch(a, l, r, key):
     if l > r:
         return -1
-    mid = (l + r) / 2
+    mid = l + (r - l) / 2
     if a[mid] == key:
         return mid
     if a[mid] > key:
