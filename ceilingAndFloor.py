@@ -1,52 +1,36 @@
-def findCeiling(a, x):
-    n = len(a)
-    if n == 0:
-        return -1
-    if x <= a[0]:
-        return a[0]
-    if x > a[n-1]:
-        return -1
-    return a[ceil(a, 0, n - 1, x)]
-
 def ceil(a, l, r, x):
     if l > r:
-        return
+        return -1
+    if x <= a[l]:
+        return a[l]
     m = l + (r-l) / 2
     if a[m] == x:
-        return m
+        return a[m]
     if m > l and a[m] > x and a[m-1] < x:
-        return m
+        return a[m]
     if m < r and a[m] < x and a[m+1] > x:
-        return m + 1
+        return a[m + 1]
     if a[m] < x:
-        return ceil(a, m+1, r, x)
+        return ceil(a, m + 1, r, x)
     return ceil(a, l, m - 1, x)
-
-def findFloor(a, x):
-    n = len(a)
-    if n == 0:
-        return -1
-    if x >= a[n-1]:
-        return a[n-1]
-    if x < a[0]:
-        return -1
-    return a[floor(a, 0, n - 1, x)]
 
 def floor(a, l, r, x):
     if l > r:
         return
+    if x >= a[r]:
+        return a[r]
     m = l + (r-l) / 2
     if a[m] == x:
-        return m
+        return a[m]
     if m > l and a[m-1] < x and a[m] > x:
-        return m - 1
+        return a[m - 1]
     if m < r and a[m] < x and a[m+1] > x:
-        return m
+        return a[m]
     if a[m] < x:
         return floor(a, m + 1, r, x)
     return floor(a, l, m - 1, x)
 
 a = [1, 3, 4, 6, 8, 9, 10]
 for i in range(12):
-    #print findCeiling(a, i)
-    print findFloor(a, i)
+    #print ceil(a, 0, len(a) - 1, i)
+    print floor(a, 0, len(a) - 1, i)
