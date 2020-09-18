@@ -46,7 +46,6 @@ def findKLargest(a, k):
 def findKSmallest(a, k):
     result = a[:k]
     buildMaxHeap(result)
-    print result
     for i in range(k, len(a)):
         if a[i] < result[0]:
             result[0] = a[i]
@@ -55,5 +54,5 @@ def findKSmallest(a, k):
 
 
 a = [3, 5, 1, 2, 8, 4, 10, 7, 6, 0, 9]
-#print findKLargest(a, 5)
+print findKLargest(a, 5)
 print findKSmallest(a, 5)
