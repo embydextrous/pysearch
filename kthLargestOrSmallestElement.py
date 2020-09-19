@@ -72,16 +72,18 @@ def quickSelect(a, l, r, k):
         return quickSelect(a, l, pivot - 1, k)
 
 def partition(a, l, r):
+    print l, r
     pivot = a[l]
     i, j = l + 1, r
-    while i < j:
-        while i <= r and a[i] <= pivot:
+    while i <= j:
+        while i <= j and a[i] <= pivot:
             i += 1
-        while j > l and a[j] >= pivot:
+        while i <= j and a[j] >= pivot:
             j -= 1
         if i < j:
             a[i], a[j] = a[j], a[i]
     a[l], a[j] = a[j], a[l]
+    print a
     return j
 
 # Worst case time is O(n^2) but average case is O(n)
@@ -94,5 +96,5 @@ print findKthLargestMinHeap(a, 4)
 print findKthLargestMaxHeap(a, 4)
 print findKthSmallestMinHeap(a, 4)
 print findKthSmallestMaxHeap(a, 4)
-print a
+a = [10, 8, 2, 12, 17, 4, 1, 19, 15, 16, 11]
 print findKthSmallestQuickSelect(a, 6)
