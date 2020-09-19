@@ -63,11 +63,11 @@ def findKthSmallestMaxHeap(a, k):
     return a[0]
 
 def quickSelect(a, l, r, k):
-    if l < r:
+    if l <= r:
         pivot = partition(a, l, r)
         if pivot == k - 1:
             return a[pivot]
-        if pivot < k:
+        if pivot < k - 1:
             return quickSelect(a, pivot + 1, r, k)
         return quickSelect(a, l, pivot - 1, k)
 
@@ -83,7 +83,6 @@ def partition(a, l, r):
         if i < j:
             a[i], a[j] = a[j], a[i]
     a[l], a[j] = a[j], a[l]
-    print a
     return j
 
 # Worst case time is O(n^2) but average case is O(n)
