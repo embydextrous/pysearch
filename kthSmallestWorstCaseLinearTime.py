@@ -1,3 +1,8 @@
+'''
+Note that the algorithm is linear in worst case, but the constants are very high for this algorithm. Therefore, 
+this algorithm doesn’t work well in practical situations, randomized quickSelect works much better and preferred.
+'''
+
 def kthSmallest(a, l, r, k):
     if l <= r:
         n = r - l + 1
