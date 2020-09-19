@@ -97,6 +97,7 @@ def partition(a, l, r):
     a[l], a[j] = a[j], a[l]
     return j
 
+# Worst case time is O(n^2) but average case is O(n)
 def findKthSmallestQuickSelect(a, k):
     return quickSelect(a, 0, len(a) - 1, k)
 
