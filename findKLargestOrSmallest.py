@@ -52,7 +52,16 @@ def findKSmallest(a, k):
             maxHeapify(result, k, 0)
     return result
 
+def findKSmallestUsingMinHeap(a, k):
+    n = len(a)
+    buildMinHeap(a)
+    for i in range(n - 1, n - k - 1, -1):
+        a[0], a[i] = a[i], a[0]
+        minHeapify(a, i, 0)
+    return a[n-k:]
+
 
 a = [3, 5, 1, 2, 8, 4, 10, 7, 6, 0, 9]
 print findKLargest(a, 5)
 print findKSmallest(a, 5)
+print findKSmallestUsingMinHeap(a, 5)
