@@ -12,5 +12,5 @@ def printConsecutiveWithSumN(N):
                     a = [x for x in range(q - i / 2 + 1, f + 1)]
                     print a
 
-N = 125
+N = 100
 printConsecutiveWithSumN(N)

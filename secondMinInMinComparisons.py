@@ -38,7 +38,6 @@ def secondMin(a):
             node = li.pop(0)
             li.append(node)
     mini = li[0].data
-    preorder(li[0])
     secondMini = findSecondMini(li[0], sys.maxint)
     return (mini, secondMini)
 
@@ -51,13 +50,6 @@ def findSecondMini(root, res):
     if root.right and root.right.data < res and root.right.data != root.data:
         res = root.right.data
         return findSecondMini(root.right, res)
-
-def preorder(root):
-    if root:
-        print root.data,
-        preorder(root.left)
-        preorder(root.right)
-
 
 a = [3, 6, 100, 9, 10, 12, 7, -1, 1]
 print secondMin(a)
